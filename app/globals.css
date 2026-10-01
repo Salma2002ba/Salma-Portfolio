@@ -1,0 +1,218 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* ── Core palette (Light) ── */
+  --bg: #fdfdfc;
+  --surface: #f3f3f2;
+  --border: #e6e6e4;
+  --text: #1a1a1c;
+  --muted: #6b6b72;
+
+  /* ── Brand accents ── */
+  --pink: #e8397d;
+  --green: #29c282;
+  --blue: #3d9fe8;
+
+  /* ── Glow utilities ── */
+  --glow-pink: rgba(232, 57, 125, 0.15);
+  --glow-green: rgba(41, 194, 130, 0.15);
+  --glow-blue: rgba(61, 159, 232, 0.15);
+}
+
+.dark {
+  /* ── Core palette (Dark) ── */
+  --bg: #0a0a0b;
+  --surface: #111113;
+  --border: #1f1f23;
+  --text: #f0ede8;
+  --muted: #8b8b94;
+
+  /* ── Brand accents ── */
+  --pink: #e8397d;
+  --green: #3de8a0;
+  --blue: #3d9fe8;
+
+  /* ── Glow utilities ── */
+  --glow-pink: rgba(232, 57, 125, 0.2);
+  --glow-green: rgba(61, 232, 160, 0.15);
+  --glow-blue: rgba(61, 159, 232, 0.15);
+}
+
+/* ── Base resets ── */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: auto; /* Lenis handles smooth scroll */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--text);
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+
+/* ── Selection ── */
+::selection {
+  background: var(--pink);
+  color: var(--bg);
+}
+
+/* ── Scrollbar (Chromium) ── */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--muted);
+}
+
+/* ── Focus ring ── */
+*:focus-visible {
+  outline: 2px solid var(--pink);
+  outline-offset: 2px;
+}
+
+/* ── Noise texture overlay ── */
+.noise-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  pointer-events: none;
+  opacity: 0.03;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-size: 256px 256px;
+}
+
+/* ── Glassmorphism card ── */
+.glass-card {
+  background: rgba(243, 243, 242, 0.6);
+  border: 1px solid var(--border);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border-radius: 1rem;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.dark .glass-card {
+  background: rgba(17, 17, 19, 0.6);
+}
+
+.glass-card:hover {
+  border-color: rgba(232, 57, 125, 0.3);
+  box-shadow: 0 0 30px var(--glow-pink);
+}
+
+/* ── Section spacing ── */
+.section-spacing {
+  padding-top: clamp(4rem, 8vw, 8rem);
+  padding-bottom: clamp(4rem, 8vw, 8rem);
+}
+
+/* ── Container ── */
+.container-main {
+  width: 100%;
+  max-width: 1280px;
+  margin-inline: auto;
+  padding-inline: clamp(1.25rem, 4vw, 3rem);
+}
+
+/* ── Section label (mono, spaced) ── */
+.section-label {
+  font-family: var(--font-jetbrains), monospace;
+  font-size: clamp(0.7rem, 0.6rem + 0.5vw, 0.85rem);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 1rem;
+}
+
+/* ── Accent gradient border (animated) ── */
+.gradient-border {
+  position: relative;
+  overflow: hidden;
+}
+
+.gradient-border::before {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  padding: 1px;
+  background: conic-gradient(
+    from 0deg,
+    var(--pink),
+    var(--green),
+    var(--blue),
+    var(--pink)
+  );
+  mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  mask-composite: exclude;
+  -webkit-mask-composite: xor;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  animation: spin-gradient 4s linear infinite;
+}
+
+.gradient-border:hover::before {
+  opacity: 1;
+}
+
+@keyframes spin-gradient {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ── Grid Pattern ── */
+.bg-grid-pattern {
+  background-size: 50px 50px;
+  background-image: linear-gradient(to right, var(--border) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--border) 1px, transparent 1px);
+  mask-image: radial-gradient(circle at center, black 30%, transparent 80%);
+  -webkit-mask-image: radial-gradient(circle at center, black 30%, transparent 80%);
+}
+
+/* ── Navbar Scrolled State ── */
+.nav-scrolled {
+  background-color: rgba(253, 253, 252, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+}
+
+.dark .nav-scrolled {
+  background-color: rgba(10, 10, 11, 0.85);
+}
+
+/* ── Prefers reduced motion ── */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
