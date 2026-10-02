@@ -291,7 +291,7 @@ export const projects: ProjectItem[] = [
 export const skillCategories: SkillCategory[] = [
   {
     category: "CI/CD & DevOps",
-    items: ["GitLab CI", "GitHub Actions", "Docker", "Git", "Linux", "Bash"],
+    items: ["GitLab CI", "GitHub Actions", "Docker", "Maven", "Gradle", "Git", "Linux", "Bash"],
   },
   {
     category: "DevSecOps",
@@ -299,7 +299,7 @@ export const skillCategories: SkillCategory[] = [
   },
   {
     category: "Développement & données",
-    items: ["Python", "C# / .NET", "WPF / MVVM", "Entity Framework Core", "PostgreSQL", "SQL"],
+    items: ["Python", "Java", "C# / .NET", "C / C++", "WPF / MVVM", "Entity Framework Core", "PostgreSQL", "SQL"],
   },
   {
     category: "En montée en compétences",
