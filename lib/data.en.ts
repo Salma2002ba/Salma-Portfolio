@@ -179,32 +179,34 @@ export const education: EducationItem[] = [
 
 export const projects: ProjectItem[] = [
   {
-    title: "Dosimeter traceability",
-    tag: "CEA · SOFTWARE",
-    description:
-      "Line-of-business application in C#/.NET (WPF, MVVM, Entity Framework Core), from architecture to deployment, under ISO 17025 (COFRAC) accreditation. Proprietary code, not published.",
-    image: "/main.svg",
-  },
-  {
-    title: "SlimAI, chatbot application",
-    tag: "CLOUD · DEVOPS",
-    description:
-      "Academic project: a containerized chatbot application (frontend and backend) deployed on AWS, with infrastructure as code in Terraform and automated delivery through CI/CD.",
-    image: "/globe.svg",
-  },
-  {
-    title: "SECOMO, connected greenhouse",
-    tag: "IOT · FULL-STACK",
-    description:
-      "Multi-school project: ESP32 firmware, a FastAPI REST API backed by PostgreSQL, and a real-time React dashboard over WebSocket.",
-    image: "/webhook.svg",
-  },
-  {
-    title: "Build pipeline security",
+    title: "Software Diversity",
     tag: "RESEARCH · DEVSECOPS",
     description:
-      "Software diversity to secure software supply chains, with SBOMs and vulnerability scanning in CI/CD. Université de Montréal, 2025.",
-    image: "/webhook.svg",
+      "Research internship in Montréal: do Maven and Gradle produce the same artifact? Build comparison, SBOMs and vulnerability scanning to catch a compromised build pipeline.",
+    keywords: ["Supply chain security", "SBOM", "Syft", "Grype", "Maven · Gradle", "GitHub Actions"],
+    icon: "shield",
+    accent: "pink",
+    href: "https://github.com/Salma2002ba/software-diversity-build-security",
+  },
+  {
+    title: "Cloud Chat on AWS",
+    tag: "CLOUD · INFRASTRUCTURE AS CODE",
+    description:
+      "Real-time chat built as microservices and provisioned on AWS with Terraform: Lambda, ECS Fargate, RDS in private subnets, S3. CI pipeline with secret, IaC and image scanning.",
+    keywords: ["AWS", "Terraform", "Docker", "ECS Fargate", "Lambda", "Checkov · Trivy"],
+    icon: "cloud",
+    accent: "green",
+    href: "https://github.com/Salma2002ba/cloud-chat-aws",
+  },
+  {
+    title: "SECOMO",
+    tag: "IOT · DEVOPS",
+    description:
+      "Connected greenhouse (ESP32, FastAPI, React) productionized end to end: platform provisioned with Ansible, Jenkins pipeline, Kubernetes deployment, metrics and logs.",
+    keywords: ["Kubernetes", "Jenkins", "Ansible", "Prometheus", "Grafana · Loki", "pytest"],
+    icon: "sprout",
+    accent: "blue",
+    href: "https://github.com/Salma2002ba/secomo",
   },
 ];
 
@@ -315,6 +317,7 @@ export const ui = {
     educationTitle: "Where I studied.",
     projects: "Projects",
     projectsTitle: "What I've built.",
+    viewCode: "View the code",
     skills: "Skills",
     skillsTitle: "My toolbox.",
     softSkillsTitle: "Beyond the tech.",

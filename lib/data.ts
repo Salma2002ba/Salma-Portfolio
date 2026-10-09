@@ -43,9 +43,12 @@ export interface ProjectItem {
   title: string;
   tag: string;
   description: string;
-  image: string;
-  /** Lien public (dépôt GitHub). Absent pour un projet confidentiel. */
-  href?: string;
+  /** Mots-clés affichés en pastilles sous la description */
+  keywords: string[];
+  icon: "shield" | "cloud" | "sprout";
+  accent: "pink" | "green" | "blue";
+  /** Dépôt GitHub public */
+  href: string;
 }
 
 export interface SkillCategory {
@@ -255,34 +258,34 @@ export const education: EducationItem[] = [
 
 export const projects: ProjectItem[] = [
   {
-    title: "Traçabilité de dosimètres",
-    tag: "CEA · LOGICIEL",
-    description:
-      "Application métier C#/.NET (WPF, MVVM, Entity Framework Core), de l'architecture au déploiement, sous accréditation COFRAC. Code confidentiel, non publié.",
-    image: "/main.svg",
-  },
-  {
-    // Lien GitHub à remettre une fois le dépôt finalisé : https://github.com/Salma2002ba/SlimAI-CHAT
-    title: "SlimAI, application de chatbot",
-    tag: "CLOUD · DEVOPS",
-    description:
-      "Projet académique : application de chatbot (frontend et backend) conteneurisée avec Docker, déployée sur AWS avec une infrastructure décrite en Terraform, livraison automatisée en CI/CD.",
-    image: "/globe.svg",
-  },
-  {
-    // Lien GitHub à remettre une fois le dépôt finalisé : https://github.com/Salma2002ba/SECOMO
-    title: "SECOMO, serre connectée",
-    tag: "IOT · FULL-STACK",
-    description:
-      "Projet inter-écoles : firmware ESP32, API REST FastAPI avec PostgreSQL, dashboard React temps réel en WebSocket.",
-    image: "/webhook.svg",
-  },
-  {
-    title: "Sécurité des chaînes de build",
+    title: "Software Diversity",
     tag: "RECHERCHE · DEVSECOPS",
     description:
-      "Diversité logicielle pour sécuriser les software supply chains, SBOM et scan de vulnérabilités dans la CI/CD. Université de Montréal, 2025.",
-    image: "/webhook.svg",
+      "Stage de recherche à Montréal : Maven et Gradle produisent-ils le même artefact ? Comparaison de builds, SBOM et scan de vulnérabilités pour repérer une chaîne de build compromise.",
+    keywords: ["Supply chain security", "SBOM", "Syft", "Grype", "Maven · Gradle", "GitHub Actions"],
+    icon: "shield",
+    accent: "pink",
+    href: "https://github.com/Salma2002ba/software-diversity-build-security",
+  },
+  {
+    title: "Cloud Chat on AWS",
+    tag: "CLOUD · INFRASTRUCTURE AS CODE",
+    description:
+      "Chat temps réel en microservices, déployé sur AWS par Terraform : Lambda, ECS Fargate, base RDS en réseau privé, S3. Pipeline CI avec scans de secrets, d'IaC et d'images.",
+    keywords: ["AWS", "Terraform", "Docker", "ECS Fargate", "Lambda", "Checkov · Trivy"],
+    icon: "cloud",
+    accent: "green",
+    href: "https://github.com/Salma2002ba/cloud-chat-aws",
+  },
+  {
+    title: "SECOMO",
+    tag: "IOT · DEVOPS",
+    description:
+      "Serre connectée (ESP32, FastAPI, React) industrialisée de bout en bout : plateforme montée par Ansible, pipeline Jenkins, déploiement Kubernetes, monitoring et logs.",
+    keywords: ["Kubernetes", "Jenkins", "Ansible", "Prometheus", "Grafana · Loki", "pytest"],
+    icon: "sprout",
+    accent: "blue",
+    href: "https://github.com/Salma2002ba/secomo",
   },
 ];
 
@@ -396,6 +399,7 @@ export const ui = {
     educationTitle: "Mes études.",
     projects: "Projets",
     projectsTitle: "Ce que j'ai construit.",
+    viewCode: "Voir le code",
     skills: "Compétences",
     skillsTitle: "Mes outils.",
     softSkillsTitle: "Au-delà de la technique.",
