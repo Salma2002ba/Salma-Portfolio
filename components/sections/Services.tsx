@@ -1,6 +1,6 @@
 "use client";
 
-import { services } from "@/lib/data";
+import { useContent } from "@/lib/i18n";
 import { ScrollReveal } from "@/components/ui/ScrollReveal";
 import { ShieldCheck, Workflow, Code, Sparkles, Users, Leaf } from "lucide-react";
 
@@ -17,15 +17,16 @@ const iconMap = {
  * Services — 3-column card grid with animated gradient borders.
  */
 export function Services() {
+  const { services, ui } = useContent();
   return (
     <section id="services" className="section-spacing">
       <div className="container-main">
         <ScrollReveal>
-          <span className="section-label">Domaines</span>
+          <span className="section-label">{ui.sections.services}</span>
         </ScrollReveal>
         <ScrollReveal delay={0.1}>
           <h2 className="font-display font-extrabold text-fluid-3xl leading-[1.1] tracking-tight mb-12 max-w-3xl">
-            Ce que j&apos;apporte.
+            {ui.sections.servicesTitle}
           </h2>
         </ScrollReveal>
 

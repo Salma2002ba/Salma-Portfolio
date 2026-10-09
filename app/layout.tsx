@@ -49,6 +49,7 @@ export const metadata: Metadata = {
     "Polytech Marseille",
     "Aix-Marseille",
   ],
+  alternates: { canonical: "/", languages: { fr: "/", en: "/en" } },
   openGraph: {
     title: "Salma BABA - Ingénieure DevOps & DevSecOps",
     description: siteDescription,

@@ -1,6 +1,6 @@
 "use client";
 
-import { contactData, socialLinks } from "@/lib/data";
+import { useContent } from "@/lib/i18n";
 import { ScrollReveal } from "@/components/ui/ScrollReveal";
 import { MagneticButton } from "@/components/ui/MagneticButton";
 
@@ -9,11 +9,12 @@ import { MagneticButton } from "@/components/ui/MagneticButton";
  * No form: nothing would receive the messages.
  */
 export function Contact() {
+  const { contactData, socialLinks, ui } = useContent();
   return (
     <section id="contact" className="section-spacing">
       <div className="container-main">
         <ScrollReveal>
-          <span className="section-label">Contact</span>
+          <span className="section-label">{ui.sections.contact}</span>
         </ScrollReveal>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 mt-4 items-end">
@@ -45,7 +46,7 @@ export function Contact() {
 
               <div className="flex flex-wrap items-center gap-4">
                 <MagneticButton href={`mailto:${contactData.email}`} variant="filled" accent="pink">
-                  M&apos;écrire
+                  {ui.writeMe}
                 </MagneticButton>
                 {socialLinks.map((link) => (
                   <MagneticButton key={link.name} href={link.href} variant="ghost" accent="green">

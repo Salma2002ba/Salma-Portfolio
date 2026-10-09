@@ -2,12 +2,13 @@
 
 import { motion } from "framer-motion";
 import { useReducedMotion } from "@/lib/useReducedMotion";
-import { marqueeWords as words } from "@/lib/data";
+import { useContent } from "@/lib/i18n";
 
 /**
  * Marquee — Infinite scrolling text banner.
  */
 export function Marquee() {
+  const { marqueeWords: words } = useContent();
   const prefersReduced = useReducedMotion();
   const repeatedWords = [...words, ...words, ...words, ...words];
 

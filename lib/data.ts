@@ -381,3 +381,31 @@ export const footerData = {
   builtWith: "Next.js",
 } as const;
 
+
+// ── Interface (libellés des sections et boutons) ──
+
+export const ui = {
+  locale: "fr",
+  sections: {
+    about: "À propos",
+    services: "Domaines",
+    servicesTitle: "Ce que j'apporte.",
+    experience: "Expérience",
+    experienceTitle: "Mon parcours.",
+    education: "Formation",
+    educationTitle: "Mes études.",
+    projects: "Projets",
+    projectsTitle: "Ce que j'ai construit.",
+    skills: "Compétences",
+    skillsTitle: "Mes outils.",
+    softSkillsTitle: "Au-delà de la technique.",
+    testimonials: "Ils m'ont encadrée",
+    testimonialsTitle: "Ce qu'en disent mes encadrants.",
+    contact: "Contact",
+  },
+  downloadCv: "Télécharger mon CV",
+  writeMe: "M'écrire",
+  openMenu: "Ouvrir le menu",
+  closeMenu: "Fermer le menu",
+  languageSwitch: { label: "EN", href: "/en", ariaLabel: "English version" },
+} as const;

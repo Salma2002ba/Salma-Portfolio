@@ -1,6 +1,6 @@
 "use client";
 
-import { projects } from "@/lib/data";
+import { useContent } from "@/lib/i18n";
 import { ScrollReveal } from "@/components/ui/ScrollReveal";
 import { ArrowUpRight } from "lucide-react";
 
@@ -8,15 +8,16 @@ import { ArrowUpRight } from "lucide-react";
  * Projects — Editorial list layout.
  */
 export function Projects() {
+  const { projects, ui } = useContent();
   return (
     <section id="work" className="section-spacing">
       <div className="container-main">
         <ScrollReveal>
-          <span className="section-label">Projets</span>
+          <span className="section-label">{ui.sections.projects}</span>
         </ScrollReveal>
         <ScrollReveal delay={0.1}>
           <h2 className="font-display font-extrabold text-fluid-3xl leading-[1.1] tracking-tight mb-14">
-            Ce que j&apos;ai construit.
+            {ui.sections.projectsTitle}
           </h2>
         </ScrollReveal>
 

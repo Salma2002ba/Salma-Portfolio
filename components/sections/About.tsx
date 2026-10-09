@@ -1,17 +1,18 @@
 "use client";
 
-import { aboutData } from "@/lib/data";
+import { useContent } from "@/lib/i18n";
 import { ScrollReveal } from "@/components/ui/ScrollReveal";
 
 /**
  * About — Short, punchy bio section.
  */
 export function About() {
+  const { aboutData, ui } = useContent();
   return (
     <section id="about" className="section-spacing">
       <div className="container-main">
         <ScrollReveal>
-          <span className="section-label">À propos</span>
+          <span className="section-label">{ui.sections.about}</span>
         </ScrollReveal>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start">

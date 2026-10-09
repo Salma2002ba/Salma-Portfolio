@@ -1,13 +1,15 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { stats } from "@/lib/data";
+import { useContent } from "@/lib/i18n";
+import type { StatItem } from "@/lib/data";
 import { ScrollReveal } from "@/components/ui/ScrollReveal";
 
 /**
  * Stats — Count-up numbers triggered by scroll intersection.
  */
 export function Stats() {
+  const { stats } = useContent();
   return (
     <section className="section-spacing">
       <div className="container-main">
@@ -26,7 +28,7 @@ export function Stats() {
 function CountUpStat({
   stat,
 }: {
-  stat: (typeof stats)[number];
+  stat: StatItem;
 }) {
   const [count, setCount] = useState(0);
   const [hasAnimated, setHasAnimated] = useState(false);

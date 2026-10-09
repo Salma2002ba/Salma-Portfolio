@@ -1,6 +1,6 @@
 "use client";
 
-import { blogPosts } from "@/lib/data";
+import { useContent } from "@/lib/i18n";
 import { ScrollReveal } from "@/components/ui/ScrollReveal";
 import { ArrowUpRight } from "lucide-react";
 
@@ -8,6 +8,7 @@ import { ArrowUpRight } from "lucide-react";
  * Blog — Editorial list layout with hover reveals.
  */
 export function Blog() {
+  const { blogPosts } = useContent();
   return (
     <section id="blog" className="section-spacing">
       <div className="container-main">

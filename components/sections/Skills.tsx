@@ -1,6 +1,6 @@
 "use client";
 
-import { skillCategories, softSkillCategories } from "@/lib/data";
+import { useContent } from "@/lib/i18n";
 import { ScrollReveal } from "@/components/ui/ScrollReveal";
 
 const accentColors = ["pink", "green", "blue"] as const;
@@ -9,6 +9,7 @@ const accentColors = ["pink", "green", "blue"] as const;
  * Skills — Grouped columns with hoverable tag pills and subtle background.
  */
 export function Skills() {
+  const { skillCategories, softSkillCategories, ui } = useContent();
   return (
     <section id="skills" className="section-spacing relative overflow-hidden">
       {/* Very subtle gradient mesh background */}
@@ -19,11 +20,11 @@ export function Skills() {
 
       <div className="container-main relative z-10">
         <ScrollReveal>
-          <span className="section-label">Compétences</span>
+          <span className="section-label">{ui.sections.skills}</span>
         </ScrollReveal>
         <ScrollReveal delay={0.1}>
           <h2 className="font-display font-extrabold text-fluid-3xl leading-[1.1] tracking-tight mb-14">
-            Mes outils.
+            {ui.sections.skillsTitle}
           </h2>
         </ScrollReveal>
 
@@ -57,7 +58,7 @@ export function Skills() {
         {/* Soft skills, langues, centres d'intérêt */}
         <ScrollReveal delay={0.1}>
           <h3 className="font-display font-extrabold text-fluid-xl tracking-tight mt-20 mb-10">
-            Au-delà de la technique.
+            {ui.sections.softSkillsTitle}
           </h3>
         </ScrollReveal>
 

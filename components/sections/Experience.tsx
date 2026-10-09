@@ -1,22 +1,23 @@
 "use client";
 
-import { experiences, education } from "@/lib/data";
+import { useContent } from "@/lib/i18n";
 import { ScrollReveal } from "@/components/ui/ScrollReveal";
 
 /**
  * Experience & Education — Timeline layout with numbered items.
  */
 export function Experience() {
+  const { experiences, education, ui } = useContent();
   return (
     <section id="experience" className="section-spacing">
       <div className="container-main">
         {/* Experience Section */}
         <ScrollReveal>
-          <span className="section-label">Expérience</span>
+          <span className="section-label">{ui.sections.experience}</span>
         </ScrollReveal>
         <ScrollReveal delay={0.1}>
           <h2 className="font-display font-extrabold text-fluid-3xl leading-[1.1] tracking-tight mb-14">
-            Mon parcours.
+            {ui.sections.experienceTitle}
           </h2>
         </ScrollReveal>
 
@@ -70,11 +71,11 @@ export function Experience() {
 
         {/* Education Section */}
         <ScrollReveal className="mt-24">
-          <span className="section-label">Formation</span>
+          <span className="section-label">{ui.sections.education}</span>
         </ScrollReveal>
         <ScrollReveal delay={0.2}>
           <h2 className="font-display font-extrabold text-fluid-3xl leading-[1.1] tracking-tight mb-14 ">
-            Mes études.
+            {ui.sections.educationTitle}
           </h2>
         </ScrollReveal>
 

@@ -1,10 +1,13 @@
-import { footerData, navLinks, socialLinks } from "@/lib/data";
+"use client";
+
+import { useContent } from "@/lib/i18n";
 import { ScrollReveal } from "@/components/ui/ScrollReveal";
 
 /**
  * Footer — Minimal single row: logo left, nav center, copyright right.
  */
 export function Footer() {
+  const { footerData, navLinks, socialLinks } = useContent();
   return (
     <ScrollReveal>
       <footer className="border-t border-border">

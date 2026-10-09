@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { navLinks, cvUrl } from "@/lib/data";
+import { useContent } from "@/lib/i18n";
 import { MagneticButton } from "@/components/ui/MagneticButton";
 import { ThemeToggle } from "@/components/ui/ThemeToggle";
 import { Menu, X } from "lucide-react";
@@ -12,6 +12,7 @@ import { Menu, X } from "lucide-react";
  * Logo: "Salma." with pink dot. Mobile: full-screen overlay.
  */
 export function Navbar() {
+  const { navLinks, cvUrl, ui } = useContent();
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("");
@@ -43,7 +44,7 @@ export function Navbar() {
     });
 
     return () => observers.forEach((o) => o.disconnect());
-  }, []);
+  }, [navLinks]);
 
   /* Lock body scroll on mobile menu */
   useEffect(() => {
@@ -90,6 +91,13 @@ export function Navbar() {
 
           {/* Desktop CTA & Theme Toggle */}
           <div className="hidden md:flex items-center gap-4">
+            <a
+              href={ui.languageSwitch.href}
+              aria-label={ui.languageSwitch.ariaLabel}
+              className="font-mono text-xs text-muted hover:text-text border border-border hover:border-pink/40 rounded-full px-3 py-1 transition-colors duration-200"
+            >
+              {ui.languageSwitch.label}
+            </a>
             <ThemeToggle />
             {cvUrl && (
               <MagneticButton
@@ -97,18 +105,25 @@ export function Navbar() {
                 variant="ghost"
                 accent="green"
               >
-                Télécharger mon CV
+                {ui.downloadCv}
               </MagneticButton>
             )}
           </div>
 
           {/* Mobile hamburger & Theme Toggle */}
           <div className="flex items-center gap-4 md:hidden relative z-50">
+            <a
+              href={ui.languageSwitch.href}
+              aria-label={ui.languageSwitch.ariaLabel}
+              className="font-mono text-xs text-muted hover:text-text border border-border hover:border-pink/40 rounded-full px-3 py-1 transition-colors duration-200"
+            >
+              {ui.languageSwitch.label}
+            </a>
             <ThemeToggle />
             <button
               className="p-2 text-text"
               onClick={() => setMobileOpen(!mobileOpen)}
-              aria-label={mobileOpen ? "Fermer le menu" : "Ouvrir le menu"}
+              aria-label={mobileOpen ? ui.closeMenu : ui.openMenu}
             >
               {mobileOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
@@ -157,7 +172,7 @@ export function Navbar() {
                     variant="ghost"
                     accent="green"
                   >
-                    Télécharger mon CV
+                    {ui.downloadCv}
                   </MagneticButton>
                 </motion.div>
               )}

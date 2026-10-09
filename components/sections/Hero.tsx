@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
-import { heroData, socialLinks } from "@/lib/data";
+import { useContent } from "@/lib/i18n";
 import { MagneticButton } from "@/components/ui/MagneticButton";
 import { useReducedMotion } from "@/lib/useReducedMotion";
 
@@ -11,6 +11,7 @@ import { useReducedMotion } from "@/lib/useReducedMotion";
  * Integrated avatar pill and animated grid background.
  */
 export function Hero() {
+  const { heroData, socialLinks } = useContent();
   const prefersReduced = useReducedMotion();
 
   // eslint-disable-next-line @typescript-eslint/no-explicit-any

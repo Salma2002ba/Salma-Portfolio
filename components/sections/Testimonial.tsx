@@ -1,21 +1,22 @@
 "use client";
 
-import { testimonials } from "@/lib/data";
+import { useContent } from "@/lib/i18n";
 import { ScrollReveal } from "@/components/ui/ScrollReveal";
 
 /**
  * Testimonial — Grid layout of glassmorphism feedback cards.
  */
 export function Testimonial() {
+  const { testimonials, ui } = useContent();
   return (
     <section className="section-spacing overflow-hidden">
       <div className="container-main relative">
         <ScrollReveal>
-          <span className="section-label">Ils m&apos;ont encadrée</span>
+          <span className="section-label">{ui.sections.testimonials}</span>
         </ScrollReveal>
         <ScrollReveal delay={0.1}>
           <h2 className="font-display font-extrabold text-fluid-3xl leading-[1.1] tracking-tight mb-14 max-w-2xl">
-            Ce qu&apos;en disent mes encadrants.
+            {ui.sections.testimonialsTitle}
           </h2>
         </ScrollReveal>
 
