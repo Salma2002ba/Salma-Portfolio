@@ -18,7 +18,10 @@ import type {
   InterestTag,
 } from "./data";
 
-export { socialLinks, cvUrl } from "./data";
+export { socialLinks } from "./data";
+
+/** English CV, in public/. Generated from workflow_cdi/ressources/portfolio-en. */
+export const cvUrl: string | null = "/CV_Salma_BABA_EN.pdf";
 
 // ── Navigation ──
 
@@ -325,7 +328,7 @@ export const ui = {
     testimonialsTitle: "What my supervisors say.",
     contact: "Contact",
   },
-  downloadCv: "Download my CV (FR)",
+  downloadCv: "Download my CV",
   writeMe: "Email me",
   openMenu: "Open menu",
   closeMenu: "Close menu",
