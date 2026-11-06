@@ -148,10 +148,10 @@ export const marqueeWords = [
 export const aboutData = {
   headline: "Du code à l'infra,\ndans un cadre\nexigeant.",
   paragraphs: [
-    "Je suis ingénieure informatique, diplômée de Polytech Marseille en juillet 2026, dans la première promotion en alternance. Mon parcours tient en trois étapes.",
+    "Je suis ingénieure informatique, diplômée de Polytech Marseille en septembre 2026, dans la première promotion en alternance. Mon parcours tient en trois étapes.",
     "Trois ans au CEA Cadarache, sur le système d'information d'un laboratoire en environnement nucléaire réglementé : pipelines GitLab CI, migration d'un historique Access vers PostgreSQL, application de traçabilité en C#/.NET sous accréditation COFRAC. C'est là que j'ai appris à travailler proprement et dans la durée.",
     "Un stage de recherche à l'Université de Montréal sur la sécurité des chaînes de build : SBOM, scan de vulnérabilités, diversité logicielle. C'est ce qui m'a orientée vers le DevSecOps.",
-    "Aujourd'hui, je monte en compétences sur le cloud et je cherche un CDI DevOps en région PACA.",
+    "Aujourd'hui, je monte en compétences sur le cloud et je cherche un CDI DevOps, avec une mobilité nationale.",
   ],
 } as const;
 
@@ -370,7 +370,7 @@ export const testimonials: Testimonial[] = [
 
 export const contactData = {
   headline: "Un poste à pourvoir ?\nÉchangeons.",
-  body: "Je cherche un CDI d'ingénieure DevOps ou DevSecOps en région PACA, idéalement à Aix-Marseille. Disponible dès maintenant.",
+  body: "Je cherche un CDI d'ingénieure DevOps ou DevSecOps, avec une mobilité nationale. Disponible dès maintenant.",
   email: "salma2002ba@gmail.com",
 } as const;
 

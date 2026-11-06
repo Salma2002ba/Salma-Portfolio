@@ -72,10 +72,10 @@ export const marqueeWords = [
 export const aboutData = {
   headline: "From code to infra,\nwhere reliability\nis not optional.",
   paragraphs: [
-    "I'm a software engineer who graduated from Polytech Marseille in July 2026, in its first work-study cohort. My background comes down to three chapters.",
+    "I'm a software engineer who graduated from Polytech Marseille in September 2026, in its first work-study cohort. My background comes down to three chapters.",
     "Three years at CEA Cadarache, the French Alternative Energies and Atomic Energy Commission, on the information system of a lab operating in a regulated nuclear environment: GitLab CI pipelines, migrating a legacy Access history to PostgreSQL, and a traceability application in C#/.NET under ISO 17025 (COFRAC) accreditation. That's where I learned to build things properly and make them last.",
     "A research internship at Université de Montréal on build pipeline security: SBOMs, vulnerability scanning, software diversity. That work is what pulled me towards DevSecOps.",
-    "Today I'm upskilling on cloud and looking for a full-time DevOps role in the South of France (Aix-Marseille area).",
+    "Today I'm upskilling on cloud and looking for a full-time DevOps role, open to relocation across France.",
   ],
 } as const;
 
@@ -292,7 +292,7 @@ export const testimonials: Testimonial[] = [
 
 export const contactData = {
   headline: "Hiring?\nLet's talk.",
-  body: "I'm looking for a full-time DevOps or DevSecOps engineer role in the South of France, ideally in the Aix-Marseille area. Available now.",
+  body: "I'm looking for a full-time DevOps or DevSecOps engineer role, open to relocation across France. Available now.",
   email: "salma2002ba@gmail.com",
 } as const;
 
