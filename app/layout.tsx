@@ -27,7 +27,7 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 const siteDescription =
-  "Ingénieure DevOps & DevSecOps, diplômée de Polytech Marseille, trois ans d'alternance au CEA Cadarache. CI/CD, automatisation Python, logiciel en environnement réglementé. Recherche un CDI en région PACA.";
+  "Ingénieure DevOps & DevSecOps, diplômée de Polytech Marseille, trois ans d'alternance au CEA Cadarache. CI/CD, automatisation Python, logiciel en environnement réglementé. Recherche un CDI, mobilité nationale.";
 
 // Vercel fournit le domaine de production ; sert aux aperçus de lien (LinkedIn, etc.).
 const siteUrl = process.env.VERCEL_PROJECT_PRODUCTION_URL
