@@ -203,7 +203,7 @@ export const experiences: ExperienceItem[] = [
     id: "01",
     year: "Sept. 2023 — Août 2026",
     role: "Ingénieure Logiciel & DevOps (alternance)",
-    company: "CEA Cadarache · Laboratoire LDCI, plateforme MADERE",
+    company: "CEA Cadarache",
     description:
       "Système d'information critique d'un laboratoire de dosimétrie, en environnement nucléaire réglementé.",
     bullets: [

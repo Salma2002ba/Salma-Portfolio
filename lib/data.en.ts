@@ -127,7 +127,7 @@ export const experiences: ExperienceItem[] = [
     id: "01",
     year: "Sep 2023 — Aug 2026",
     role: "Software & DevOps Engineer (work-study)",
-    company: "CEA Cadarache · LDCI laboratory, MADERE platform",
+    company: "CEA Cadarache",
     description:
       "Mission-critical information system for a dosimetry lab, in a regulated nuclear environment.",
     bullets: [
